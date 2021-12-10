@@ -1,0 +1,124 @@
+.tweet-container {
+  display: flex;
+  align-items: flex-start;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+
+}
+
+.feed-right-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.feed-right-top-left {
+  display: flex;
+  align-items: center;
+}
+
+.tweet-profile-pic {
+  height: 50px;
+  width: 50px;
+  object-fit: contain;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.tweet-profile-pic:hover {
+  filter: brightness(75%);
+}
+
+.feed-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.feed-top-left {
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+}
+
+.usernickname {
+  font-size: 13px;
+  font-weight: 600;
+  margin-right: 2px;
+  cursor: pointer;
+}
+
+.username {
+  font-size: 13px;
+  color: #948f8f;
+  font-weight: 300;
+  margin-left: 5px;
+  margin-right: 2px;
+  cursor: pointer;
+}
+
+.feed-right-top-left:hover .usernickname {
+  text-decoration: underline !important;
+}
+
+.when {
+  font-size: 13px;
+  color: #948f8f;
+  font-weight: 300;
+  cursor: pointer;
+}
+.feed-tweet {
+  font-size: 13px;
+  font-weight: 300;
+}
+.tweet-img {
+  margin-top: 5px;
+  height: auto;
+  width: 95%;
+  border-radius: 15px;
+  object-fit: contain;
+  cursor: pointer;
+}
+
+.more-icon:hover {
+  background-color: #51aeeb34 !important ;
+  color: #1d9bf0 !important;
+  border-radius: 50%;
+}
+
+.feed-right-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.feed-bottom-icon {
+  font-size: 15px !important;
+  margin-left: 5px;
+  color: #948f8f;
+  font-weight: 300;
+}
+
+.feed-bottom-icon:hover {
+  background-color: thistle;
+  border-radius: 50%;
+}
+
+.feed-bottom-icon:hover ~ .feed-bottom-counter {
+  color: thistle;
+}
+
+.feed-bottom-counter {
+  font-size: 11px;
+  color: #948f8f;
+  font-weight: 300;
+  margin-left: 5px;
+}
+
+.feed-bottom-button-container {
+  border-radius: 50% !important;
+  height: auto;
+  width: auto;
+}
+
+.feed-bottom-button-container:hover {
+  background-color: transparent !important;
+}

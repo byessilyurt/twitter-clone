@@ -1,0 +1,69 @@
+.share-container {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  height: 120px;
+  display: flex;
+  justify-content: flex-start;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.main-profile-pic {
+  margin-left: 10px;
+}
+.input-and-button {
+  width: 100%;
+  margin-left: 0px;
+}
+.input-and-button input {
+  width: 100%;
+  height: 50px;
+  border: none;
+}
+input:focus {
+  outline: none;
+}
+
+input,
+input::-webkit-input-placeholder {
+  font-size: 18px;
+  color: #ccc !important;
+  font-weight: 400 !important;
+}
+
+.share-profile-pic {
+  height: 45px;
+  object-fit: contain;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.share-profile-pic:hover{
+  filter: brightness(75%);
+}
+
+.icons-and-button-container {
+  margin-left: -10px;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.main-icons {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+
+.main-icon {
+  color: #1d9bf0 !important;
+  margin-right: 5px;
+}
+
+.button-container{
+  margin-right:15px;
+}
+
+.button{
+  background-color: #1d9bf0 !important;
+  border-radius: 20px !important;
+}

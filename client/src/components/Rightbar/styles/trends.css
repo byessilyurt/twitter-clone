@@ -1,0 +1,76 @@
+.trends-container {
+  background-color: #f4f6f6;
+  border-radius: 30px;
+  width: 300px;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.trends-top {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.trends-top-title {
+  font-size: 18px !important;
+  font-weight: 600 !important;
+  margin-left: 15px !important;
+}
+
+.trends-top-settings {
+  margin-right: 15px;
+}
+
+.ranking-container {
+  width: 100%;
+  margin-bottom:10px;
+  margin-top:5px;
+}
+
+.ranking {
+  width: 100%;
+}
+
+.ranking-top {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ranking-top-left {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  margin-left: 15px;
+}
+
+.ranking-top-right {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin-right: 15px;
+}
+
+.ranking-num,
+.ranking-topic,.ranking-tweet-count {
+  font-size: 11px !important; 
+  font-weight: 300 !important;
+  letter-spacing: 0.5px !important;
+}
+
+.ranking-tweet {
+  margin-left: 15px !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+}
+
+.ranking-tweet-count{
+  margin-left: 15px !important;
+}

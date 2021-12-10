@@ -1,0 +1,7 @@
+.rightbar-container{
+  display: flex;
+  align-items: flex-start;
+  margin-left: 20px;
+  margin-top: 10px; 
+  flex-direction: column;
+}

@@ -1,0 +1,89 @@
+.whotofollow-container {
+  background-color: #f4f6f6;
+  border-radius: 30px;
+  width: 300px;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.whotofollow-top {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.whotofollow-top-title {
+  font-size: 18px !important;
+  font-weight: 600 !important;
+  margin-left: 15px !important;
+  margin-top: 5px !important;
+  margin-bottom: 5px !important;
+}
+
+.whotofollow-users-container {
+  width: 100%;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.whotofollow-user {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.whotofollow-user-img {
+  height: 45px;
+  width: auto;
+  object-fit: contain;
+  border-radius: 50% !important;
+  cursor: pointer;
+}
+
+.whotofollow-user-img:hover {
+  filter: brightness(75%);
+}
+
+.whotofollow-user-left {
+  display: flex;
+  align-items: center;
+}
+
+.whotofollow-user-info-container {
+  margin-left: 10px;
+  margin-top: 3px;
+}
+.whotofollow-user-info-container:hover .whotofollow-user-usernickname {
+  text-decoration: underline !important;
+}
+
+.whotofollow-user-usernickname {
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  margin-right: 2px !important;
+  cursor: pointer !important;
+}
+
+.whotofollow-user-username {
+  font-size: 12px !important;
+  color: #948f8f !important;
+  font-weight: 300 !important;
+  margin-right: 2px !important;
+  cursor: pointer !important;
+}
+
+.whotofollow-user-follow-button {
+  margin-right: 25px;
+}
+
+.whotofollow-user-follow-button Button {
+  background-color: black !important;
+  border-radius: 30px;
+  font-size: 11px !important;
+}
