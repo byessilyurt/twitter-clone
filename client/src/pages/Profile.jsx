@@ -8,7 +8,7 @@ function Profile() {
     <div>
         <Leftbar />
         <div>
-            {user.username}
+            {user.username} Profile
         </div>
         <Rightbar/>
     </div>
