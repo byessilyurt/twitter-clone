@@ -1,0 +1,31 @@
+.register-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 30vh;
+}
+.register-form{
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+}
+.register-form input{
+    margin-left:5px
+}
+
+label{
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+}
+
+button{
+    display: block;
+    width:30%;
+    background-color: blue;
+    border-radius: 20px;
+    color: white;
+    padding:3px;
+    cursor: pointer;
+}
