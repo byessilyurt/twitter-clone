@@ -3,8 +3,7 @@ import Leftbar from "../components/Leftbar/Leftbar";
 import Rightbar from "../components/Rightbar/Rightbar";
 
 function Profile() {
-  return 
-  (
+  return(
     <div>
         <Leftbar />
         <div>
@@ -12,7 +11,6 @@ function Profile() {
         </div>
         <Rightbar/>
     </div>
-
   )
 }
 
