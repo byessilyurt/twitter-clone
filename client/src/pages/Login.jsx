@@ -1,19 +1,21 @@
-import React, { useRef } from "react";
+import React, { useRef, useContext } from "react";
 import bgImg from "../assets/login/tw-bg.png";
 import "./styles/login.css";
 import TwitterIcon from "@mui/icons-material/Twitter";
-import { useUserStore } from "../context/userContext";
-import { CircularProgress } from "@material-ui/core";
+import Skeleton from '@mui/material/Skeleton';
+import { AuthContext } from "../context/AuthContext";
+import { loginCall } from "../apiCalls";
 
 function Login() {
-  const {user, loginUser, isFetching} = useUserStore();
   const email = useRef();
   const password = useRef();
+  const { isFetching, dispatch } = useContext(AuthContext);
   const handleSubmit = (e) => {
-    e.preventDefault()
-    console.log(isFetching);
-    loginUser({email:email.current.value, password:password.current.value})
-    console.log(isFetching);
+    e.preventDefault();
+    loginCall(
+      { email: email.current.value, password: password.current.value },
+      dispatch
+    );
   };
   return (
     <div className="login-container">
@@ -33,7 +35,9 @@ function Login() {
           <form onSubmit={handleSubmit}>
             <input type="email" placeholder="Username" ref={email} />
             <input type="password" placeholder="Password" ref={password} />
-            <button type="submit">{ isFetching ? <CircularProgress/> : "Log in "}</button>
+            <button type="submit" disabled={isFetching}>
+              {isFetching ? "Loading" : "Log in "}
+            </button>
           </form>
         </div>
       </div>

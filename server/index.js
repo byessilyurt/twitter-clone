@@ -3,11 +3,13 @@ const app = express();
 import mongoose from "mongoose";
 import dotenv from "dotenv";
 import helmet from "helmet";
+import cors from "cors";
 import morgan from "morgan";
 import userRoute from "./routes/users.js";
 import authRoute from "./routes/auth.js";
 
 dotenv.config();
+const PORT = 8800;
 
 mongoose.connect(
   process.env.REACT_APP_MONGO_URL,
@@ -18,6 +20,7 @@ mongoose.connect(
 );
 
 //middleware
+app.use(cors())
 app.use(express.json());
 app.use(helmet());
 app.use(morgan("common"));
@@ -29,6 +32,6 @@ app.get("/", (req, res) => {
   res.send("welcomeee");
 });
 
-app.listen(8800, () => {
-  console.log("backend is running");
+app.listen(PORT, () => {
+  console.log(`backend is running at ${PORT}`);
 });

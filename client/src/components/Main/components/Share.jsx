@@ -35,7 +35,7 @@ function Share() {
             </IconButton>
           </div>
           <div className="button-container">
-            <Button className="button" variant="contained">
+            <Button className="tweet-button" variant="contained">
               Tweetle
             </Button>
           </div>

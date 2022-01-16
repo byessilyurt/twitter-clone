@@ -1,3 +1,4 @@
+import React, {useContext} from 'react'
 import "../styles/feed.css";
 import { Button } from "@mui/material";
 import profilePic from "../../../assets/profile_pic/my_profile_pic.jpg";
@@ -7,8 +8,11 @@ import ChatBubbleOutlineIcon from "@mui/icons-material/ChatBubbleOutline";
 import CompareArrowsIcon from "@mui/icons-material/CompareArrows";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import IosShareIcon from "@mui/icons-material/IosShare";
+import { AuthContext } from "../../../context/AuthContext";
 
 function Feed() {
+  const {user} = useContext(AuthContext)
+
   return (
     <div className="tweet-container">
       <div className="feed-top-left">
@@ -17,8 +21,8 @@ function Feed() {
       <div className="feed-right">
         <div className="feed-right-top">
           <div className="feed-right-top-left">
-            <div className="usernickname">Yusuf Yeşilyurt</div>
-            <div className="username">@yessilyurt</div>
+            <div className="usernickname">{user.email}</div>
+            <div className="username">@{user.username}</div>
             <div className="when">· 9 mins ago</div>
           </div>
           <div className="feed-right-top-right">

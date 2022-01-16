@@ -63,7 +63,10 @@ input::-webkit-input-placeholder {
   margin-right:15px;
 }
 
-.button{
+.tweet-button{
   background-color: #1d9bf0 !important;
-  border-radius: 20px !important;
+  border-radius:5px !important;
+  font-size: 12px !important;
+  margin-right: 40px !important;
+
 }

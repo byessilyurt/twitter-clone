@@ -4,4 +4,5 @@
   margin-left: 20px;
   margin-top: 10px; 
   flex-direction: column;
+  position: fixed;
 }

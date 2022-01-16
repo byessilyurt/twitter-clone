@@ -1,20 +1,20 @@
-import {Typography} from '@material-ui/core'
-import IconButton from '@mui/material/IconButton';
-import FlareIcon from '@mui/icons-material/Flare';
+import { Typography } from "@material-ui/core";
+import IconButton from "@mui/material/IconButton";
+import FlareIcon from "@mui/icons-material/Flare";
 
-import '../styles/topbar.css';
+import "../styles/topbar.css";
 
 function Topbar() {
   return (
     <div className="topbar">
-      <Typography variant="h6" className="title" >
+      <Typography variant="h6" className="title">
         Anasayfa
       </Typography>
-      <IconButton>
-        <FlareIcon></FlareIcon>
+      <IconButton className="flare-icon">
+        <FlareIcon  />
       </IconButton>
     </div>
-  )
+  );
 }
 
-export default Topbar
+export default Topbar;
