@@ -8,9 +8,13 @@ import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import CreateIcon from '@mui/icons-material/Create';
 import IconButton from '@mui/material/IconButton';
 import profilePic from '../../assets/profile_pic/my_profile_pic.jpg'
-
+import { useUserStore } from '../../context/userContext';
 import './styles/leftbar.css'
 function Leftbar() {
+  const {logoutUser} = useUserStore()
+  const handleClick = () => {
+    logoutUser()
+  }
   return (
     <div className="leftbar-container">
     <div className="icons">
@@ -40,7 +44,7 @@ function Leftbar() {
       </IconButton>
     </div>
     <div className="icons left-profile-pic">
-      <img src={profilePic} alt="profile-pic" />
+      <img src={profilePic} alt="profile-pic" onClick={handleClick}/>
     </div>
     </div>
   )

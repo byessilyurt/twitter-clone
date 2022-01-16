@@ -4,16 +4,17 @@
 
 .left {
     position: relative;
-    width: 45%;
+    width: auto;
     height: 110vh;
 }
 
 .login-background {
     max-width: 100%;
     height: inherit;
-    object-fit:cover;
+    object-fit: cover;
 }
-.left-tw-icon{
+
+.left-tw-icon {
     position: absolute !important;
     top: 25% !important;
     left: 25% !important;
@@ -24,46 +25,49 @@
 }
 
 @media only screen and (max-width: 800px) {
-    .left {
-      display: none;
+    .login-container {
+        flex-direction: column-reverse;
     }
-  }
-  
-
-.right {
-    width: 55%;
-    height: 100vh;
-    padding: 30px 20px 0px 50px;
 }
 
-.right-tw-icon{
-    font-size: 50px !important ;
+
+.right {
+    width: auto;
+    height: 100vh;
+    padding: 30px 20px 30px 50px;
+}
+
+.right-tw-icon {
+    font-size: 50px !important;
     margin-bottom: 30px;
 }
 
-.main-title-container{
+.main-title-container {
     width: 100%;
     margin-bottom: 30px;
 }
-.main-title-span{
-    width: 20% ;
+
+.main-title-span {
+    width: 20%;
     font-size: 56px;
     font-weight: bolder;
 }
 
-.secondary-title-container{
+.secondary-title-container {
     width: 100%;
     margin-bottom: 30px;
 }
-.secondary-title-span{
+
+.secondary-title-span {
     width: 30%;
     font-size: 42px;
     font-weight: bolder;
 }
 
-.form-container{
+.form-container {
     width: 80%;
 }
+
 .form-container form {
     display: flex;
     flex-direction: column;
@@ -71,16 +75,22 @@
 }
 
 .form-container form * {
-    margin: 10px 0px ;
+    margin: 10px 0px;
 }
+
 .form-container form input {
     padding: 10px !important;
     height: 20px;
     border: none;
     border-bottom: 1px solid rgba(0, 0, 0, 0.8);
-    background-color:whitesmoke;
-    color:black !important;
+    background-color: white;
+    color: black !important;
     font-size: small;
+}
+
+input::placeholder {
+    /* modern browser */
+    color: rgba(0, 0, 0, 0.527) !important;
 }
 
 .form-container form button {
