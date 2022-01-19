@@ -7,6 +7,7 @@ import cors from "cors";
 import morgan from "morgan";
 import userRoute from "./routes/users.js";
 import authRoute from "./routes/auth.js";
+import tweetRoute from "./routes/tweets.js";
 
 dotenv.config();
 const PORT = 8800;
@@ -27,6 +28,8 @@ app.use(morgan("common"));
 
 app.use("/api/users", userRoute);
 app.use("/api/auth", authRoute);
+app.use("/api/tweets", tweetRoute);
+
 
 app.get("/", (req, res) => {
   res.send("welcomeee");

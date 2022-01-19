@@ -9,11 +9,6 @@ function Main() {
       <Topbar />
       <Share />
       <Feed />
-      <Feed />
-      <Feed />
-      <Feed />
-      <Feed />
-      <Feed />
     </div>
   );
 }

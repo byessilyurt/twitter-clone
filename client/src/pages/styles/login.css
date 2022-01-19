@@ -4,7 +4,7 @@
 
 .left {
     position: relative;
-    width: auto;
+    width: 50%;
     height: 110vh;
 }
 
@@ -27,6 +27,9 @@
 @media only screen and (max-width: 800px) {
     .login-container {
         flex-direction: column-reverse;
+    }
+    .left{
+        width: auto;
     }
 }
 

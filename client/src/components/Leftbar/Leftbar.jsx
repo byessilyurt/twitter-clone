@@ -1,3 +1,4 @@
+import React, {useContext} from 'react'
 import HomeIcon from '@mui/icons-material/Home';
 import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone';
 import AppsIcon from '@mui/icons-material/Apps';
@@ -12,7 +13,8 @@ import './styles/leftbar.css'
 
 function Leftbar() {
   const handleClick = () => {
-    console.log("log out clicked")
+      localStorage.removeItem("user")
+      window.location.reload()
   }
   return (
     <div className="leftbar-container">

@@ -79,7 +79,7 @@
 }
 
 .more-icon:hover {
-  background-color: #51aeeb34 !important ;
+  background-color: transparent !important ;
   color: #1d9bf0 !important;
   border-radius: 50%;
 }

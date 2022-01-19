@@ -65,8 +65,8 @@ input::-webkit-input-placeholder {
 
 .tweet-button{
   background-color: #1d9bf0 !important;
-  border-radius:5px !important;
-  font-size: 12px !important;
+  border-radius:10px !important;
+  font-size: 11px !important;
   margin-right: 40px !important;
-
+  width: auto;
 }

@@ -10,6 +10,10 @@ const TweetSchema = new mongoose.Schema(
           type:String,
           max:280
       },
+      likes:{
+          type:Array,
+        default:[]
+      },
       image:{
           type:String
       }
@@ -17,4 +21,4 @@ const TweetSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-export default mongoose.model("User", UserSchema);
+export default mongoose.model("Tweet", TweetSchema);

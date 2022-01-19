@@ -84,6 +84,7 @@
 
 .whotofollow-user-follow-button Button {
   background-color: black !important;
-  border-radius: 30px;
+  border-radius: 10px;
+  width: auto;
   font-size: 11px !important;
 }
