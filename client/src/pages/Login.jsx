@@ -1,10 +1,10 @@
 import React, { useRef, useContext } from "react";
-import bgImg from "../assets/login/tw-bg.png";
+import bgImg from "../assets/loginandregister/tw-bg.png";
 import "./styles/login.css";
 import TwitterIcon from "@mui/icons-material/Twitter";
-import Skeleton from '@mui/material/Skeleton';
 import { AuthContext } from "../context/AuthContext";
 import { loginCall } from "../apiCalls";
+import {Link} from 'react-router-dom'
 
 function Login() {
   const email = useRef();
@@ -35,10 +35,11 @@ function Login() {
           <form onSubmit={handleSubmit}>
             <input type="email" placeholder="Username" ref={email} />
             <input type="password" placeholder="Password" ref={password} />
-            <button type="submit" disabled={isFetching}>
+            <button type="submit" >
               {isFetching ? "Loading" : "Log in "}
             </button>
           </form>
+          <Link className="link-to-register" to="/register">Don't have an account yet? Join today.</Link>
         </div>
       </div>
     </div>

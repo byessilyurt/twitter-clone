@@ -6,8 +6,20 @@ import GifIcon from "@mui/icons-material/Gif";
 import EqualizerIcon from "@mui/icons-material/Equalizer";
 import MoodIcon from "@mui/icons-material/Mood";
 import DateRangeIcon from "@mui/icons-material/DateRange";
-
-function Share() {
+import React, {useRef,useContext, useState} from 'react'
+import {AuthContext} from '../../../context/AuthContext'
+import axios from "axios";
+function Share() {  
+  const {user} = useContext(AuthContext)
+  const [tweetContent, setTweetContent] = useState()
+  const handleTweet = () => {
+    async function sendTweet(){
+      const res = await axios.post("http://localhost:8800/api/tweets/new", {content:tweetContent, userId:user._id})
+      console.log(res.data);
+    }
+    sendTweet()
+    window.location.reload()
+  }
   return (
     <div className="share-container">
       <div className="main-profile-pic">
@@ -15,7 +27,7 @@ function Share() {
       </div>
       <div className="emptyDiv"></div>
       <div className="input-and-button">
-        <input placeholder="Neler Oluyor?" />
+        <input placeholder="Neler Oluyor?" onChange={(e) => setTweetContent(e.target.value)} />
         <div className="icons-and-button-container">
           <div className="main-icons">
             <IconButton className="main-icon" size="small">
@@ -35,7 +47,7 @@ function Share() {
             </IconButton>
           </div>
           <div className="button-container">
-            <Button className="tweet-button" variant="contained">
+            <Button className="tweet-button" variant="contained" onClick={handleTweet}>
               Tweetle
             </Button>
           </div>

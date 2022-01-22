@@ -104,3 +104,9 @@ input::placeholder {
     padding: 10px;
     width: 100%;
 }
+
+.link-to-register{
+    color: rgb(136, 135, 135);
+    font-size: smaller;
+    text-decoration:underline;
+}
