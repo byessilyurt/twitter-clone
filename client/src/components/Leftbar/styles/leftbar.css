@@ -1,6 +1,7 @@
 .leftbar-container {
   height: 100%;
   display: flex;
+  flex:3;
   align-items: center;
   float: right;
   flex-direction: column;

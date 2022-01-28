@@ -41,7 +41,19 @@ router.delete("/:id", async (req, res) => {
   }
 });
 
-// get a user
+// get a user for profile
+router.get("/profile/:username", async (req, res) => {
+  try {
+    const user = await User.findOne({username:req.params.username});
+    const { password, createdAt, updatedAt, isAdmin, __v, ...other } =
+      user._doc;
+    res.status(200).json(other);
+  } catch (err) {
+    res.status(404).json(err);
+  }
+});
+
+// get a user by ID
 router.get("/:id", async (req, res) => {
   try {
     const user = await User.findById(req.params.id);
@@ -58,7 +70,7 @@ router.get("/", async (req, res) => {
     const users = await User.find();
     res.status(200).json(users);
   } catch (err) {
-    console.log(err);
+    res.status(404).json(err);
   }
 });
 

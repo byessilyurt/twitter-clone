@@ -110,3 +110,9 @@ input::placeholder {
     font-size: smaller;
     text-decoration:underline;
 }
+
+.password-error{
+    font-size: small;
+    color: red;
+    
+}

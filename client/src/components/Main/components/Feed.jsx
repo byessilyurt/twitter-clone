@@ -2,10 +2,12 @@ import React, { useContext, useEffect, useState } from "react";
 import axios from "axios";
 import { AuthContext } from "../../../context/AuthContext";
 import Tweet from "./Tweet";
+import '../styles/feed.css'
 
 function Feed() {
   const [tweets, setTweets] = useState([]);
   const { user } = useContext(AuthContext);
+
   useEffect(() => {
     async function getTweets() {
       const response = await axios.get(
@@ -19,12 +21,15 @@ function Feed() {
     }
     getTweets();
   }, [user._id]);
-
   return (
     <div>
-      {tweets.map((tweet) => {
-        return <Tweet tweet={tweet} key={tweet._id} />;
-      })}
+      {tweets.length > 0 ? (
+        tweets.map((tweet) => {
+          return <Tweet tweet={tweet} key={tweet._id} />;
+        })
+      ) : (
+        <div className="nothing-in-timeline">Nothing to see yet!</div>
+      )}
     </div>
   );
 }

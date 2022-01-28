@@ -90,7 +90,7 @@ router.get("/", async (req, res) => {
     const tweets = await Tweet.find();
     res.status(200).json(tweets);
   } catch (err) {
-    console.log(err);
+    res.status(404).json(err);
   }
 });
 

@@ -1,0 +1,18 @@
+.navigation-container{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin-top: 10px;
+}
+.name-and-tweet-count{
+    margin-left:15px;
+}
+
+.name{
+    font-size: larger !important;
+}
+
+.tweet-count{
+    font-size: smaller  !important;
+    font-weight: 100 !important;
+}

@@ -7,6 +7,7 @@ import EqualizerIcon from "@mui/icons-material/Equalizer";
 import MoodIcon from "@mui/icons-material/Mood";
 import DateRangeIcon from "@mui/icons-material/DateRange";
 import React, {useRef,useContext, useState} from 'react'
+import {Link} from 'react-router-dom'
 import {AuthContext} from '../../../context/AuthContext'
 import axios from "axios";
 function Share() {  
@@ -15,7 +16,6 @@ function Share() {
   const handleTweet = () => {
     async function sendTweet(){
       const res = await axios.post("http://localhost:8800/api/tweets/new", {content:tweetContent, userId:user._id})
-      console.log(res.data);
     }
     sendTweet()
     window.location.reload()
@@ -23,7 +23,9 @@ function Share() {
   return (
     <div className="share-container">
       <div className="main-profile-pic">
+        <Link to={`/profile/${user.username}`}>
         <img src={profilePic} className="share-profile-pic" alt="" />
+        </Link>
       </div>
       <div className="emptyDiv"></div>
       <div className="input-and-button">

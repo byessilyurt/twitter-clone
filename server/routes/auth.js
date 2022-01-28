@@ -10,9 +10,13 @@ router.post("/register", async (req, res) => {
      const salt = await bcyrpt.genSalt(10);
      const hashedPassword = await bcyrpt.hash(req.body.password, salt);
      const user = await new User({
+      nameAndSurname:req.body.nameAndSurname,
       username: req.body.username,
       email: req.body.email,
       password: hashedPassword,
+      biography:req.body.biography,
+      location:req.body.location
+
     });
     await user.save();
     res.status(200).json(user + " %$# " + hashedPassword  );
@@ -23,7 +27,7 @@ router.post("/register", async (req, res) => {
 
 router.post("/login", async (req, res) => {
   try {
-    const user = await User.findOne({ email: req.body.email });
+    const user = await User.findOne({ username: req.body.username });
     !user && res.status(404).json("User not found");
 
     const validPassword = await bcyrpt.compare(

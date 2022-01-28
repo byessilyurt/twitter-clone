@@ -6,8 +6,9 @@
  .left-bar {
   flex:1.85;
 }
-.main{
+.middle{
   flex:5.8;
+  height: auto;
 }
 .right-bar{
   flex:4.3;

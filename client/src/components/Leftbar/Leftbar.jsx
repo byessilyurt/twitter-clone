@@ -10,8 +10,11 @@ import CreateIcon from '@mui/icons-material/Create';
 import IconButton from '@mui/material/IconButton';
 import profilePic from '../../assets/profile_pic/my_profile_pic.jpg'
 import './styles/leftbar.css'
+import {AuthContext} from "../../context/AuthContext"
+import {Link} from 'react-router-dom'
 
 function Leftbar() {
+  const {user} = useContext(AuthContext)
   const handleClick = () => {
       localStorage.removeItem("user")
       window.location.reload()
@@ -22,9 +25,11 @@ function Leftbar() {
       <IconButton className="icon twitter-color" size="large">
       <TwitterIcon fontSize="large"/>
       </IconButton>
+      <Link to="/" style={{color:"black"}}>
       <IconButton  color="inherit"  className="icon" size="large">
       <HomeIcon fontSize="medium" />
       </IconButton>
+      </Link>
       <IconButton className="icon" color="inherit" size="large">
       <AppsIcon fontSize="medium" />
       </IconButton>
@@ -34,9 +39,11 @@ function Leftbar() {
       <IconButton className="icon" color="inherit" size="large">
       <NotificationsNoneIcon fontSize="medium"/>
       </IconButton>
+      <Link to={`/profile/${user?.username}`} style={{color:"black"}} >
       <IconButton className="icon" color="inherit" size="large">
       <PersonOutlineIcon fontSize="medium"/>
       </IconButton>
+      </Link>
       <IconButton className="icon" color="inherit" size="large">
       <MoreHorizIcon fontSize="medium"/>
       </IconButton>

@@ -7,13 +7,13 @@ import { loginCall } from "../apiCalls";
 import {Link} from 'react-router-dom'
 
 function Login() {
-  const email = useRef();
+  const username = useRef();
   const password = useRef();
   const { isFetching, dispatch } = useContext(AuthContext);
   const handleSubmit = (e) => {
     e.preventDefault();
     loginCall(
-      { email: email.current.value, password: password.current.value },
+      { username: username.current.value, password: password.current.value },
       dispatch
     );
   };
@@ -33,7 +33,7 @@ function Login() {
         </div>
         <div className="form-container">
           <form onSubmit={handleSubmit}>
-            <input type="email" placeholder="Username" ref={email} />
+            <input type="text" placeholder="Username" ref={username} />
             <input type="password" placeholder="Password" ref={password} />
             <button type="submit" >
               {isFetching ? "Loading" : "Log in "}
