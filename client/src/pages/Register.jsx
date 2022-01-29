@@ -19,7 +19,7 @@ function Register() {
       setError({password:undefined})
       registerCall({email:email.current.value, username:username.current.value, password:password.current.value})
       loginCall(
-        { email: email.current.value, password: password.current.value },
+        { username: username.current.value, password: password.current.value },
         dispatch
       );
     } else {
