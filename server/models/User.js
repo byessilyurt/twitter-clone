@@ -2,36 +2,34 @@ import mongoose from "mongoose";
 
 const UserSchema = new mongoose.Schema(
   {
-    nameAndSurname:{
-      type:String,
-      min:3,
-      max:40,
+    nameAndSurname: {
+      type: String,
+      min: 3,
+      max: 40,
     },
     username: {
       type: String,
       min: 3,
       max: 20,
       unique: true,
-      required:true
+      required: true,
     },
     email: {
       type: String,
       max: 50,
       unique: true,
-      required:true
+      required: true,
     },
     password: {
       type: String,
       min: 6,
-      required:true
+      required: true,
     },
-    profilePicture:{
-        type:String,
-        default:""
+    profilePicture: {
+      image: String,
     },
-    coverPicture:{
-        type:String,
-        default:""
+    coverPicture: {
+      image: String,
     },
     followers: {
       type: Array,
@@ -45,14 +43,14 @@ const UserSchema = new mongoose.Schema(
       type: Boolean,
       default: false,
     },
-    biography:{
-      type:String,
-      max:180
+    biography: {
+      type: String,
+      max: 180,
     },
     location: {
-      type:String,
-      max:50
-    }
+      type: String,
+      max: 50,
+    },
   },
   { timestamps: true }
 );

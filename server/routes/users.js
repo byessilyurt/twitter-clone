@@ -99,4 +99,27 @@ router.put("/:id/follow", async (req, res) => {
   }
 });
 
+
+// set profile picture 
+router.put("/profile-photo", async(req,res) => {
+      const user = await User.findById(req.body.id)
+      try{
+        await user.updateOne({$set:{profilePicture:req.body.image}})
+        res.status(200).json("Profile photo set.")
+      }catch(err){
+        res.status(500).json(err)
+      }
+})
+
+// set cover picture
+router.put("/cover-photo", async(req,res) => {
+      const user = await User.findById(req.body.id)
+      try{
+        await user.updateOne({$set:{coverPicture:req.body.image}})
+        res.status(200).json("Cover photo set.")
+      }catch(err){
+        res.status(500).json(err)
+      }
+})
+
 export default router;
