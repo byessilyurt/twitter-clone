@@ -4,7 +4,6 @@ import "./styles/info.css";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 
 function Info({ user }) {
-  console.log(user);
   return (
     <div className="info-container">
       <span className="info-name">{user?.nameAndSurname}</span>

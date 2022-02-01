@@ -1,17 +1,16 @@
 .leftbar-container {
-  height: 100%;
+  height: auto;
   display: flex;
-  flex: 3;
-  align-items: center;
-  float: right;
+  align-items: flex-start;
+  margin-left: 4vw;
   flex-direction: column;
-  left: 100px;
+  margin-top: 1vw;
+  position: fixed;
 }
 
 .icons {
   display: flex;
   align-items: center;
-  float: right;
   flex-direction: column;
   padding: 4px 18px 0px 0px;
 }

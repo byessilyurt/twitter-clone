@@ -22,9 +22,7 @@ function Leftbar() {
   return (
     <div className="leftbar-container">
     <div className="icons">
-      <IconButton className="icon twitter-color" size="large">
-      <TwitterIcon fontSize="large"/>
-      </IconButton>
+      <TwitterIcon className="icon twitter-color" fontSize="large"/>
       <Link to="/" style={{color:"black"}}>
       <IconButton  color="inherit"  className="icon" size="large">
       <HomeIcon fontSize="medium" />

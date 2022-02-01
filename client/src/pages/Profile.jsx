@@ -5,13 +5,14 @@ import Rightbar from "../components/Rightbar/Rightbar";
 import Info from "../components/Profile/Info";
 import ProfileTabs from "../components/Profile/ProfileTabs";
 import { useParams } from "react-router";
-import { getUserAndTweets } from "../apiCalls";
+import { getUserAndTweets,setProfilePhoto, setCoverPhoto } from "../apiCalls";
 import { useState } from "react";
 import coverImg from "../assets/profile_pic/cover_img.jpeg";
 import burak from "../assets/profile_pic/burak.jpeg";
 import "./styles/profile.css";
+import EditIcon from "@mui/icons-material/Edit";
+import UploadImageToDB from "../components/Profile/UploadImageToDB";
 function Profile() {
-
   const [user, setUser] = useState();
   const [tweets, setTweets] = useState();
   const username = useParams().username;
@@ -24,7 +25,13 @@ function Profile() {
     };
     requestUserAndTweets();
   }, [username]);
-  
+
+  const handleClick = async() => {
+    console.log("handleclickfired");
+    const res = await setProfilePhoto({userId:user._id, image:"testFromClient"})
+    console.log(res); 
+  }
+
   return (
     <div className="container">
       <div className="left-bar">
@@ -32,11 +39,22 @@ function Profile() {
       </div>
       <div className="middle">
         <Navigation user={user} tweetCount={tweets?.length} />
-        <div className="cover-img">
-          <img src={coverImg} alt="cover" />
-        </div>
-        <div className="profile-img">
-          <img src={burak} alt="profile" />
+        <div className="cover-img"></div>
+        <div className="img-wrapper">
+          <img src={coverImg} alt="cover" className="img-cover" />
+          <div className="cover-overlay">
+            <label htmlFor="hide-cover-upload" onClick={handleClick}>
+              <EditIcon color="secondary" />
+            </label>
+            <input id="hide-cover-upload" type="file" />
+          </div>
+          <img src={burak} alt="profile" className="img-responsive" />
+          <div className="img-overlay">
+            <label htmlFor="hide-profile-upload">
+              <EditIcon className="edit-icon" />
+            </label>
+            <input id="hide-profile-upload" type="file" />
+          </div>
         </div>
         <div className="user-info">
           <Info user={user} />
@@ -44,6 +62,7 @@ function Profile() {
         <div className="tabs">
           <ProfileTabs user={user} tweets={tweets} />
         </div>
+        <div className="upload-to-S3">{/* <UploadImageToDB /> */}</div>
       </div>
       <div className="right-bar">
         <Rightbar />

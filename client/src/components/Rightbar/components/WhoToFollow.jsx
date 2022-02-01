@@ -11,7 +11,6 @@ function WhoToFollow() {
   useEffect(() => {
     const randomUsers = async() => {
       const res = await getAllUsersAndPickThree()
-      console.log(res);
       setUsers(res)
       return res
     }
@@ -45,7 +44,7 @@ function WhoToFollow() {
                     </div>
                     <div>
                       <Typography className="whotofollow-user-username">
-                        {user?.username}
+                        @{user?.username}
                       </Typography>
                     </div>
                   </div>

@@ -1,11 +1,69 @@
-.cover-img img{
-    width: auto;
-}
-.profile-img img{
-    border:3px solid white;
+.profile-img img {
+    border: 3px solid white;
     border-radius: 50%;
     width: 150px;
     position: absolute;
     top: 44%;
-    left:17%
+    left: 17%
+}
+
+.edit-icon {
+    position: absolute;
+    left: 30%;
+    top: 63%;
+    cursor: pointer;
+}
+
+.img-wrapper {
+    position: relative;
+}
+
+.img-cover {
+    width: 100%;
+    height: auto;
+}
+
+.img-responsive {
+    border-radius: 50%;
+    border: 3px solid white;
+    position: absolute;
+    width: 20%;
+    height: auto;
+    top: 60%;
+    bottom: 0;
+    left: 13%;
+    right: 0;
+    text-align: start;
+}
+
+.img-overlay {
+    position: absolute;
+    top: 107%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: start;
+}
+
+.img-overlay:before {
+    content: ' ';
+    display: block;
+    /* adjust 'height' to position overlay content vertically */
+    height: 50%;
+}
+
+.cover-overlay {
+    cursor: pointer;
+    position: absolute;
+    left: 45vw;
+    top: 15vw;
+    bottom: 0vw;
+}
+
+#hide-cover-upload {
+    display: none;
+}
+
+#hide-profile-upload {
+    display: none;
 }
