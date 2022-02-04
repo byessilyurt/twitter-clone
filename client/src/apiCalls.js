@@ -69,24 +69,37 @@ export const createItem = async (item) => {
   }
 };
 
-export const setProfilePhoto = async (data) => {
+export const setProfilePhoto = async ({userId, image}) => {
+  const base64 = await convertToBase64(image);
+
   try {
-    const res = await axios.put(URL + "/users/profile-photo", {
-      userId: data.userId,
-      image: data.image,
-      headers: { "Content-Type": "text/plain" },
-    });
+    const res = await axios.put(URL + `/users/${userId}/profile-photo`, {userId, image:base64});
     return res.data;
   } catch (error) {
     return error;
   }
 };
 
-export const setCoverPhoto = async (data) => {
+export const setCoverPhoto = async ({userId,image}) => {
+  const base64 = await convertToBase64(image);
   try {
-    const res = await axios.put(URL + "/users/cover-photo", data);
+    const res = await axios.put(URL + `/users/${userId}/cover-photo`, {userId, image:base64});
     return res.data;
   } catch (error) {
     return error;
   }
+};
+
+// helper for profile and cover photo uploading.
+const convertToBase64 = (file) => {
+  return new Promise((resolve, reject) => {
+    const fileReader = new FileReader();
+    fileReader.readAsDataURL(file);
+    fileReader.onload = () => {
+      resolve(fileReader.result);
+    };
+    fileReader.onerror = (error) => {
+      reject(error);
+    };
+  });
 };

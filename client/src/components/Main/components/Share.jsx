@@ -24,7 +24,7 @@ function Share() {
     <div className="share-container">
       <div className="main-profile-pic">
         <Link to={`/profile/${user.username}`}>
-        <img src={profilePic} className="share-profile-pic" alt="" />
+        <img src={user?.profilePicture} className="share-profile-pic" alt="" />
         </Link>
       </div>
       <div className="emptyDiv"></div>

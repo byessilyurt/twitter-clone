@@ -32,7 +32,7 @@ function WhoToFollow() {
               <div className="whotofollow-user" key={user?._id}>
                 <div className="whotofollow-user-left">
                   <img
-                    src={profilePic}
+                    src={user?.profilePicture}
                     alt="whotofollow-user"
                     className="whotofollow-user-img"
                   />

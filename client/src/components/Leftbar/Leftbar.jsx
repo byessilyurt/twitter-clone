@@ -50,7 +50,7 @@ function Leftbar() {
       </IconButton>
     </div>
     <div className="icons left-profile-pic">
-      <img src={profilePic} alt="profile-pic" onClick={handleClick}/>
+      <img src={user?.profilePicture} alt="profile-pic" onClick={handleClick}/>
     </div>
     </div>
   )

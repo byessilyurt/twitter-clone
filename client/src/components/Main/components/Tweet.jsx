@@ -22,7 +22,7 @@ function Tweet({tweet}) {
   return (
     <div className="tweet-container">
       <div className="feed-top-left">
-        <img src={profilePic} className="tweet-profile-pic" alt="profile" />
+        <img src={user?.profilePicture} className="tweet-profile-pic" alt="profile" />
       </div>
       <div className="feed-right">
         <div className="feed-right-top">

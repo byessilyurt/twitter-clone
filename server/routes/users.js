@@ -44,7 +44,7 @@ router.delete("/:id", async (req, res) => {
 // get a user for profile
 router.get("/profile/:username", async (req, res) => {
   try {
-    const user = await User.findOne({username:req.params.username});
+    const user = await User.findOne({ username: req.params.username });
     const { password, createdAt, updatedAt, isAdmin, __v, ...other } =
       user._doc;
     res.status(200).json(other);
@@ -99,27 +99,26 @@ router.put("/:id/follow", async (req, res) => {
   }
 });
 
-
-// set profile picture 
-router.put("/profile-photo", async(req,res) => {
-      const user = await User.findById(req.body.id)
-      try{
-        await user.updateOne({$set:{profilePicture:req.body.image}})
-        res.status(200).json("Profile photo set.")
-      }catch(err){
-        res.status(500).json(err)
-      }
-})
+// set profile picture
+router.put("/:id/profile-photo", async (req, res) => {
+  const user = await User.findById(req.body.userId);
+  try {
+    await user.updateOne({ $set: { profilePicture: req.body.image } });
+    res.status(200).json(user);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
 // set cover picture
-router.put("/cover-photo", async(req,res) => {
-      const user = await User.findById(req.body.id)
-      try{
-        await user.updateOne({$set:{coverPicture:req.body.image}})
-        res.status(200).json("Cover photo set.")
-      }catch(err){
-        res.status(500).json(err)
-      }
-})
+router.put("/:id/cover-photo", async (req, res) => {
+  const user = await User.findById(req.body.userId);
+  try {
+    await user.updateOne({ $set: { coverPicture: req.body.image } });
+    res.status(200).json(user);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
 export default router;

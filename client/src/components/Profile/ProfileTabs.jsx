@@ -1,7 +1,7 @@
 import React from "react";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
-import Tweet from '../Main/components/Tweet'
+import Tweet from "../Main/components/Tweet";
 import Box from "@mui/material/Box";
 
 function TabPanel(props) {
@@ -26,7 +26,7 @@ function a11yProps(index) {
     "aria-controls": `full-width-tabpanel-${index}`,
   };
 }
-function ProfileTabs({user, tweets}) {
+function ProfileTabs({ user, tweets, loading }) {
   const [value, setValue] = React.useState(0);
 
   const handleChange = (event, newValue) => {
@@ -47,21 +47,27 @@ function ProfileTabs({user, tweets}) {
           <Tab label="Likes" {...a11yProps(2)} />
         </Tabs>
       </Box>
-      <TabPanel value={value} index={0}>
-          {tweets?.length > 0 ? (
-            tweets.map((tweet) => {
-              return <Tweet tweet={tweet} key={tweet._id} />;
-            })
-          ) : (
-            <div className="nothing-in-timeline">Nothing to see yet!</div>
-          )}
-      </TabPanel>
-      <TabPanel value={value} index={1}>
-        Item Two
-      </TabPanel>
-      <TabPanel value={value} index={2}>
-        Item Three
-      </TabPanel>
+      {loading ? (
+        <div className="loader"></div>
+      ) : (
+        <>
+          <TabPanel value={value} index={0}>
+            {tweets?.length > 0 ? (
+              tweets.map((tweet) => {
+                return <Tweet tweet={tweet} key={tweet._id} />;
+              })
+            ) : (
+              <div className="nothing-in-timeline">Nothing to see yet!</div>
+            )}
+          </TabPanel>
+          <TabPanel value={value} index={1}>
+            Item Two
+          </TabPanel>
+          <TabPanel value={value} index={2}>
+            Item Three
+          </TabPanel>
+        </>
+      )}
     </Box>
   );
 }
