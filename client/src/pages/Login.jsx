@@ -4,9 +4,11 @@ import "./styles/login.css";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import { AuthContext } from "../context/AuthContext";
 import { loginCall } from "../apiCalls";
-import {Link} from 'react-router-dom'
+import { Link } from "react-router-dom";
+import { useAuth0 } from "@auth0/auth0-react";
 
 function Login() {
+  const { loginWithRedirect } = useAuth0();
   const username = useRef();
   const password = useRef();
   const { isFetching, dispatch } = useContext(AuthContext);
@@ -35,11 +37,11 @@ function Login() {
           <form onSubmit={handleSubmit}>
             <input type="text" placeholder="Username" ref={username} />
             <input type="password" placeholder="Password" ref={password} />
-            <button type="submit" >
-              {isFetching ? "Loading" : "Log in "}
-            </button>
+            <button type="submit">{isFetching ? "Loading" : "Log in "}</button>
           </form>
-          <Link className="link-to-register" to="/register">Don't have an account yet? Join today.</Link>
+          <Link className="link-to-register" to="/register">
+            Don't have an account yet? Join today.
+          </Link>
         </div>
       </div>
     </div>

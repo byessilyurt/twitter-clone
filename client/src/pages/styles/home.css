@@ -1,15 +1,13 @@
-.container{
-  width: 100vw;
+.container {
   height: 100vh;
-  display:flex;
-} 
- .left-bar {
-  flex:1.85;
+  display: grid;
+  grid-template-columns: 200px 1fr 200px;
 }
-.middle{
-  flex:5.8;
+
+.left-bar {}
+
+.middle {
   height: auto;
 }
-.right-bar{
-  flex:4.3;
-}
+
+.right-bar {}
