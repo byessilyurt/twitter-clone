@@ -1,29 +1,35 @@
-import mongoose from 'mongoose'
+import mongoose from "mongoose";
 
 const UserSchema = new mongoose.Schema(
   {
+    nameAndSurname: {
+      type: String,
+      min: 3,
+      max: 40,
+    },
     username: {
       type: String,
       min: 3,
       max: 20,
       unique: true,
+      required: true,
     },
     email: {
       type: String,
       max: 50,
       unique: true,
+      required: true,
     },
     password: {
       type: String,
       min: 6,
+      required: true,
     },
     profilePicture: {
-      type: String,
-      default: "",
+      image: String,
     },
     coverPicture: {
-      type: String,
-      default: "",
+      image: String,
     },
     followers: {
       type: Array,
@@ -37,24 +43,16 @@ const UserSchema = new mongoose.Schema(
       type: Boolean,
       default: false,
     },
-    desc: {
+    biography: {
+      type: String,
+      max: 180,
+    },
+    location: {
       type: String,
       max: 50,
-    },
-    city: {
-      type: String,
-      max: 50,
-    },
-    from: {
-      type: String,
-      max: 50,
-    },
-    relationship: {
-      type: Number,
-      enum: [1, 2, 3],
     },
   },
   { timestamps: true }
 );
 
-export default mongoose.model("User", UserSchema)
+export default mongoose.model("User", UserSchema);

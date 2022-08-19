@@ -9,7 +9,7 @@ function Home() {
       <div className="left-bar">
         <Leftbar />
       </div>
-      <div className="main">
+      <div className="middle">
         <Main />
       </div>
       <div className="right-bar">

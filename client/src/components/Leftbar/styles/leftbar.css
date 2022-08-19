@@ -1,19 +1,20 @@
 .leftbar-container {
-  height: 100%;
+  height: auto;
   display: flex;
-  align-items: center;
-  float: right;
+  align-items: flex-start;
+  margin-left: 4vw;
   flex-direction: column;
+  margin-top: 1vw;
   position: fixed;
-  left: 100px;
 }
+
 .icons {
   display: flex;
   align-items: center;
-  float: right;
   flex-direction: column;
   padding: 4px 18px 0px 0px;
 }
+
 .twitter-color {
   color: #1d9bf0 !important;
 }

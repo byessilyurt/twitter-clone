@@ -6,16 +6,30 @@ import GifIcon from "@mui/icons-material/Gif";
 import EqualizerIcon from "@mui/icons-material/Equalizer";
 import MoodIcon from "@mui/icons-material/Mood";
 import DateRangeIcon from "@mui/icons-material/DateRange";
-
-function Share() {
+import React, {useRef,useContext, useState} from 'react'
+import {Link} from 'react-router-dom'
+import {AuthContext} from '../../../context/AuthContext'
+import axios from "axios";
+function Share() {  
+  const {user} = useContext(AuthContext)
+  const [tweetContent, setTweetContent] = useState()
+  const handleTweet = () => {
+    async function sendTweet(){
+      const res = await axios.post("http://localhost:8800/api/tweets/new", {content:tweetContent, userId:user._id})
+    }
+    sendTweet()
+    window.location.reload()
+  }
   return (
     <div className="share-container">
       <div className="main-profile-pic">
-        <img src={profilePic} className="share-profile-pic" alt="" />
+        <Link to={`/profile/${user.username}`}>
+        <img src={user?.profilePicture} className="share-profile-pic" alt="" />
+        </Link>
       </div>
       <div className="emptyDiv"></div>
       <div className="input-and-button">
-        <input placeholder="Neler Oluyor?" />
+        <input placeholder="Neler Oluyor?" onChange={(e) => setTweetContent(e.target.value)} />
         <div className="icons-and-button-container">
           <div className="main-icons">
             <IconButton className="main-icon" size="small">
@@ -35,7 +49,7 @@ function Share() {
             </IconButton>
           </div>
           <div className="button-container">
-            <Button className="button" variant="contained">
+            <Button className="tweet-button" variant="contained" onClick={handleTweet}>
               Tweetle
             </Button>
           </div>

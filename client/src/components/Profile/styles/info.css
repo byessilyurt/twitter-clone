@@ -1,0 +1,55 @@
+.info-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 60px;
+    margin-top: 60px;
+}
+
+
+.info-name {
+    margin-top: 30px;
+    width: fit-content;
+}
+
+.info-username {
+    width: fit-content;
+    font-size: smaller;
+    font-weight: 100;
+    margin-bottom: 10px;
+
+}
+
+.info-bio {
+    width: fit-content;
+    font-size: medium;
+    font-weight: 300;
+    margin-bottom: 10px;
+}
+
+.info-location {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    font-size: smaller;
+    font-weight: 100;
+}
+
+.follower-container {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.info-followings {
+    font-size: medium;
+    font-weight: 300;
+    width: fit-content;
+}
+
+.info-followers {
+    font-size: medium;
+    font-weight: 300;
+    width: fit-content;
+    margin-left: 10px;
+}

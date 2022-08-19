@@ -1,15 +1,13 @@
-.container{
-  width: 100%;
+.container {
   height: 100vh;
-  display:flex;
+  display: grid;
+  grid-template-columns: 200px 1fr 200px;
 }
 
-.left-bar {
-  flex:1.85;
+.left-bar {}
+
+.middle {
+  height: auto;
 }
-.main{
-  flex:5.8;
-}
-.right-bar{
-  flex:4.3;
-}
+
+.right-bar {}

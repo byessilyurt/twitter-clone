@@ -10,3 +10,7 @@
 .title{
   font-weight: 600 !important;
 }
+
+.flare-icon:hover{
+  background-color: transparent !important;
+}

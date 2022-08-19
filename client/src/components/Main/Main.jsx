@@ -4,15 +4,10 @@ import Feed from "./components/Feed";
 import './styles/styles.css'
 
 function Main() {
-  return (
+    return (
     <div className="main">
       <Topbar />
       <Share />
-      <Feed />
-      <Feed />
-      <Feed />
-      <Feed />
-      <Feed />
       <Feed />
     </div>
   );
