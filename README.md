@@ -1,8 +1,6 @@
 # Keywords
-  - client
-ReactJS, MaterialUI, Axios, React-S3
-  - server
-Express, Mongoose, Morgan, CORS
+- ReactJS, MaterialUI, Axios, React-S3
+- Express, Mongoose, Morgan, CORS
 
 # Twitter
 Cloning the Twitter application user interface and some features to present a full-stack social media app.
